@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="copyright" content="©2025 BLUEWEBD™. All rights reserved.">
+    <meta name="author" content="BLUEWEBD™">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimal-ui, viewport-fit=cover, user-scalable=no">
+    <title>탭</title>
+
+    <!-- [S] PUBLISH COMMON STYLE -->
+    <link rel="stylesheet" href="../../assets/css/cp.style.css">
+    <!-- [E] PUBLISH COMMON STYLE -->
+
+    <!-- [S] PAGES - STYLE -->
+    <link rel="stylesheet" href="">
+    <!-- [E] PAGES - STYLE -->
+
+    <!-- [S] LIBRARY - SCRIPT -->
+    <script src="../../assets/js/lib/lib.jquery-3.6.3.min.js"></script>
+    <script src="../../assets/js/lib/lib.jquery-ui-1.13.2.js"></script>
+    <!-- [E] LIBRARY - SCRIPT -->
+
+    <!-- [S] @TEMP - GUIDE STYLE -->
+    <link rel="stylesheet" href="../assets/css/pg.component.css">
+    <!-- [E] @TEMP - GUIDE STYLE -->
+</head>
+
+<body pb-component>
+    <div class="pbgWrap">
+        <div class="pbgContainer">
+            <div class="pbg-titWrap dep1">
+                <h1>[TAB]탭</h1>
+            </div>
+            <!-- 
+				전체 wrapper 클래스 tab-wrap
+				highlight 클래스 tab-moving,
+				컨텐츠 스크롤 이동 클래스 tab-scroll,
+				탭 세로 정렬 클래스 tab-vertical
+
+				탭 메뉴 wrapper 클래스 tab-list-wrap
+				block 형 클래스 tab-expand,
+				가운데 정렬 클래스 tab-center,
+				line 상단 정렬 클래스 tab-line-top,
+				오른쪽 정렬 클래스 tab-right
+
+				탭메뉴 제목이 없을 경우 aria-label 추가
+			-->
+            <section class="pbg-content">
+                <div class="pbg-titWrap dep2">
+                    <h2>Segmented Controls Tab</h2>
+                </div>
+
+                <!-- [S] tab-moving : box -->
+                <div class="tab-wrap tab-moving box tab-filter" data-roll="tab" id="tab-4">
+                    <div class="tab-list-wrap">
+                        <ul class="tab-list">
+                            <li class="tab _is-active"><a href="javascript:void(0);"  category-filter="all">전체</a></li>
+                            <li class="tab"><a href="javascript:void(0);"  category-filter="category1">카테고리1</a></li>
+                            <li class="tab"><a href="javascript:void(0);"  category-filter="category2">카테고리2</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents-wrap">
+                        <ul class="lst segmented-filter">
+                            <li category-value="category1"><a href="#">필터 정렬 데이터1</a></li>
+                            <li category-value="category2"><a href="#">필터 정렬 데이터2</a></li>
+                            <li category-value="category2"><a href="#">필터 정렬 데이터2</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- [E] tab-moving : box -->
+            </section>
+        </div>
+    </div>
+
+</body>
+<script src="../../assets/js/ui.component.js"></script>
+<script>
+$(function() {
+    /* segmented-filter 동적데이터 추가 예시 */
+    const $tabWrap = $('#tab-4');
+    const $list = $tabWrap.find('.segmented-filter');
+    
+    $list.append(`<li category-value="category1"><a href="#">동적 추가 아이템1</a></li>`);
+    $list.append(`<li category-value="category2"><a href="#">동적 추가 아이템2</a></li>`);
+    
+    const initFilter = $tabWrap.find('.tab._is-active > a').attr('category-filter') || 'all';
+    // console.log('초기 필터 값:', initFilter);
+    COMPONENT_UI.tab.tabFilter($tabWrap, initFilter, function () {
+    const $activeTab = $tabWrap.find('.tab._is-active');
+    COMPONENT_UI.tab.moveHighLight($tabWrap, $activeTab);
+    });
+
+    // 탭메뉴 확장
+    $(".mu-expand").click(function() {
+        const isFolded = $(this).hasClass("_fold");
+        if (isFolded) {
+            // 접힌 상태 -> 펼치기
+            $(this).removeClass("_fold").siblings(".tab-expand").removeClass("expand-cont");
+            $(this).html('<i class="ico ico-24 ico-add-field" aria-hidden="true"></i>');
+        } else {
+            // 펼쳐진 상태 -> 접기
+            $(this).addClass("_fold").siblings(".tab-expand").addClass("expand-cont");
+            $(this).html('<i class="ico ico-24 ico-del-field" aria-hidden="true"></i>');
+        }
+    });
+
+});
+
+
+</script>
+
+</html>

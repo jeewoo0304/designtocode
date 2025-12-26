@@ -1,0 +1,222 @@
+[
+    {
+        "path":"main",
+        "id": "GALI000000",
+        "type": "페이지", 
+        "depth1": "로그인",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "로그인",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAMH000000",
+        "type": "페이지", 
+        "depth1": "home",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "home",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료 <br> 전체메뉴, 보정신청 팝업 존재"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAMH000001",
+        "type": "페이지", 
+        "depth1": "출퇴근 내역",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "출퇴근 내역",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAMH000002",
+        "type": "페이지", 
+        "depth1": "출퇴근 내역 상세",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "출퇴근 내역",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAVA000000",
+        "type": "페이지", 
+        "depth1": "휴가신청",
+        "depth2": "휴가현황",
+        "depth3": "",
+        "depth4": "",
+        "name": "휴가현황",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAVA000001",
+        "type": "페이지", 
+        "depth1": "",
+        "depth2": "휴가 신청",
+        "depth3": "",
+        "depth4": "",
+        "name": "휴가 신청",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료<br>달력팝업 존재"]
+    }
+    ,{
+        "path":"main",
+        "id": "GANS000000",
+        "type": "페이지", 
+        "depth1": "공지/설문",
+        "depth2": "공지",
+        "depth3": "",
+        "depth4": "",
+        "name": "공지",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GANS000001",
+        "type": "페이지", 
+        "depth1": "",
+        "depth2": "설문",
+        "depth3": "",
+        "depth4": "",
+        "name": "설문",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAPL000000",
+        "type": "페이지", 
+        "depth1": "근무지 정보",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "근무지 정보",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료"]
+    }
+    ,{
+        "path":"main",
+        "id": "GAMP000000",
+        "type": "페이지", 
+        "depth1": "내정보",
+        "depth2": "",
+        "depth3": "",
+        "depth4": "",
+        "name": "내정보",
+        "worker": "",
+        "schedule": [
+            {
+              "schedule_s": "",
+              "schedule_e": ""
+            }
+        ],
+        "workdate": "",
+        "change": "",
+        "complete": "",
+        "state": "done",
+        "etc": ["완료<br>비밀번호변경, 얼럿팝업 존재"]
+    }
+]

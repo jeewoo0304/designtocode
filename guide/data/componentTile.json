@@ -1,0 +1,37 @@
+[
+    {
+        "directory": "./component"
+    },
+    {   
+        "id": "button",
+        "name": "버튼"
+    },
+    {   
+        "id": "icons",
+        "name": "아이콘"
+    },
+    {   
+        "id": "text",
+        "name": "타이틀/텍스트/리스트"
+    },
+    {   
+        "id": "input",
+        "name": "INPUT"
+    },
+    {   
+        "id": "rdochk",
+        "name": "라디오/체크박스"
+    },
+    {   
+        "id": "popup",
+        "name": "팝업/알럿"
+    },
+    {
+        "id": "tab",
+        "name": "탭 메뉴"
+    },
+    {
+        "id": "page-scrollTop",
+        "name": "페이지 Go to Top"
+    }
+]

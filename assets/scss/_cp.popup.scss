@@ -1,0 +1,271 @@
+//--- *!
+//  * Publishing UI Components
+//  * © 2025 BLUEWEBD™. All rights reserved.
+//  * Licensed under the MIT License.
+//  * Attribution to BLUEWEBD™ is required for all copies and derivative works.
+//  * https://opensource.org/licenses/MIT
+
+//-- ** POPUP
+%transitionPop {
+    transition: opacity 250ms cubic-bezier(.86, 0, .07, 1);
+}
+
+.no-scroll {
+    @include overflow(both, hidden);
+    // overscroll-behavior:contain; // 페이지 바운스 막기
+}
+$pop: '.modalPop';
+$modal: '.modal';
+//--** POPUP
+#{$pop} {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    @include pos-offset(fixed, $left: 0, $top: 0, $z-index: 9995);
+    @extend %transition3s;
+
+    &._is-active {
+        visibility: visible;
+        opacity: 1;
+        @extend %transitionPop;
+
+        &:not(._full) {
+            @extend %sdimmed-60;
+            backdrop-filter: blur(.5rem);
+        }
+    }
+
+    // Modal layout
+    #{$modal} {
+        &Wrap {
+            @include pos-offset;
+            @include dflex($direction: column);
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            // background-color: $color-bg-primary;
+            box-sizing: border-box;
+            @extend %transition5s;
+        }
+
+        &-header {
+            @include dflex($al-items: center) {
+                flex-shrink: 1;
+            }
+
+            padding: 2.4rem 2rem;
+            min-height: 2.8rem;
+            background-color: $color-bg-primary;
+            .ico-pop-close {order:3;}
+            .mp-title {
+                flex: 1;
+                @extend %heading-md-bold;
+                max-height: 2.8rem;
+                word-break: keep-all;
+            }
+
+            .ico-close {
+                margin-left: auto;
+                margin-bottom: auto;
+            }
+            & + #{$modal}-container {padding-top:0;}
+
+            ._inModal.tooltip {top:.5rem !important;}
+        }
+
+        &-container {
+            @include pos-offset(relative);
+            padding: 4rem 2rem;
+            margin: -.1rem 0;
+            @extend %body-md-regular;
+            color: $color-text-primary;
+            background-color: $color-bg-primary;
+        }
+
+        &-footer {
+            @include pos-offset(relative, $z-index: 1);
+            text-align: center;
+
+            // padding: 0 1.6rem 2rem;
+            @include el-content(before) {
+                // 푸터 상단 그라데이션 적용
+                @include pos-offset($left: 0, $right: 0, $top: -2.4rem);
+                @include el-size(100%, 2.4rem);
+                background: linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            }
+
+            .btnWrap.grow {
+                margin: 0;
+                @include pos-offset(relative, $z-index:1);
+
+                & >[class*='btn'],
+                & >[class*='btn']:first-child,
+                & >[class*='btn']:last-child {
+                    @extend %radius-0;
+                }
+            }
+        }
+    }
+
+    // 센터
+    &._center {
+        #{$modal} {
+
+            &Wrap,
+            &-header,
+            &-container,
+            &-footer {
+                opacity: 0;
+                @extend %transitionPop;
+            }
+
+            &Wrap {
+                @include obj-offset-align;
+                width: 82%;
+                height: auto;
+                max-height: 60%;
+                // background:$color-bg-primary;
+                @extend %radius-24;
+                overflow: hidden;
+            }
+
+            &-container {
+                @include overflow(y, auto);
+
+                .alert {
+                    &-msg {
+                        text-align: center;
+                        @extend %body-md-regular;
+                        color: $color-text-secondary;
+
+                        &.sub {
+                            margin-top: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &._is-active {
+            #{$modal} {
+
+                &Wrap,
+                &-header,
+                &-container,
+                &-footer {
+                    opacity: 1;
+                    @extend %transitionPop;
+                }
+            }
+        }
+    }
+
+    // 오른쪽
+    &._right {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        @include overflow(y, auto);
+        overflow-x: hidden;
+
+        &._is-active {
+            .modalWrap {
+                right: 0;
+            }
+        }
+
+        .modal {
+            &Wrap {
+                right: -100%;
+                height: 100%;
+                max-width: 80%;
+                @include dflex($direction: column);
+                background: $color-bg-primary;
+            }
+
+            &-container {
+                padding-bottom: 4.8rem;
+                max-height: calc(100% - 7.6rem - 5.6rem);
+                @include overflow(y, auto);
+            }
+
+            &-footer {
+                width: 80%;
+                @include pos-offset(fixed, $bottom: 0);
+            }
+        }
+    }
+
+    // 하단
+    &._bottom {
+        width: 100%;
+        height: 100%;
+        top: auto;
+        bottom: 0;
+        margin: auto;
+
+        &._is-active {
+            .modalWrap {
+                bottom: 0;
+            }
+        }
+
+        #{$modal} {
+            &Wrap {
+                bottom: -100%;
+            }
+
+            &-header {
+                border-radius: 2.4rem 2.4rem 0 0;
+                overflow: hidden;
+            }
+
+            &-container {
+                max-height: 40.4rem;
+                padding-bottom: 4rem;
+                @include overflow(y, auto);
+            }
+
+            &-footer {
+                position: relative;
+                margin-top: auto;
+            }
+        }
+    }
+
+    // alert
+    &._alert {
+        .modal {
+            &-header {
+                min-height: 3.2rem;
+                padding: 0 2rem;
+            }
+
+            &-footer {}
+        }
+    }
+
+    //nav
+    &.nav{
+        #{$modal}{
+           &Wrap{
+            .modal{
+                &-header{
+                    .mp-title{
+                        @extend %heading-lg-bold;
+                    }
+                }
+                &-container{
+                    margin-top: 0.8rem;
+                }
+            }
+           } 
+        }
+    }
+}
+.dimmed {
+    @include pos-offset(fixed, $top:0, $left:0, $z-index: 9990);
+    width:100%; height:100%; @include overflow(both, hidden);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(.5rem);
+}

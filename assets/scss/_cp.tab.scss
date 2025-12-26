@@ -1,0 +1,162 @@
+//--- *!
+//  * Publishing UI Components
+//  * © 2025 BLUEWEBD™. All rights reserved.
+//  * Licensed under the MIT License.
+//  * Attribution to BLUEWEBD™ is required for all copies and derivative works.
+//  * https://opensource.org/licenses/MIT
+
+//-- ** Tab
+$tab:'.tab';
+$isActive:'._is-active';
+
+#{$tab} {
+    &-wrap {
+        &[expand-type="true"] {
+            @include pos-offset(relative);
+            
+            .mu-expand {
+                @include pos-offset($top:50%,$right:.5rem);
+                transform: translateY(-50%);
+            }
+
+        }
+    }
+	&-list-wrap {
+		@include overflow (x, auto);
+		@include pos-offset(relative);
+		width:100%;
+		margin: 2.4rem auto;
+		@include line(border, 0.1rem solid $color-border-secondary);
+		border-width: 0 0 0.1rem 0;
+		white-space: nowrap;
+		&#{$tab} {
+		}
+	}
+
+	&-list {
+		@include dflex;
+		@include pos-offset(relative);
+		min-width: fit-content;
+
+		#{$tab} {
+			display:block;
+			flex: none;
+			@include pos-offset(relative);
+			color:$color-text-primary;
+            text-align:center;
+			@include transition(.5s, color, ease-in-out);
+
+			&~#{$tab} {
+				margin-left: 2rem;
+			}
+
+			a {
+				display:block; padding: 1rem;
+                &:hover {color:$color-brand-primary-400;}
+			}
+
+			&#{$isActive} a {
+				color:$color-brand-primary-400;
+
+				@include el-content(before) {
+					@include pos-offset($bottom: 0);
+                    width:0; height:.2rem;
+					background-color:$color-brand-primary-400;
+					animation: widthAct .3s linear forwards;
+				}
+			}
+		}
+	}
+
+	&-wrap {
+		@include pos-offset(relative);
+	
+		&#{$tab} {
+
+			&-moving {
+				.tab-list-wrap {
+					&.tab-line-top {
+						.highlight {
+							bottom: auto;
+							top: 0;
+						}
+					}
+					#{$tab} {
+						@include el-content(before, none);
+					}
+					
+					.highlight {
+						@include pos-offset($left:0, $bottom:0);
+						width:6.4rem; height:0.2rem;
+						background-color:$color-brand-primary-400;
+						@include transition(.2s, all, cubic-bezier(0.0, 0.0, 0.58, 1.0));
+					}
+					#{$isActive} > a {
+						@include el-content(before) {content:inherit;}
+					}
+					
+				}
+                &.box {
+                    .tab-list-wrap {
+                        border-bottom:none;
+                        #{$tab} {
+                            flex: 1;
+                            &-list {
+                                padding:.4rem;
+                                background:$color-bg-tertiary; @extend %radius-12;
+                            }
+                            a {
+                                @include pos-offset(relative, $z-index:1);
+                                @extend %body-lg-bold;
+                                color:$color-text-tertiary;
+                                padding:.8rem 1rem; margin-bottom:0;
+                                &:hover, &:focus {color:$color-text-primary;}
+                            }
+                            &#{$isActive} > a {
+                                color:$color-text-primary;
+                            }
+                        }
+                        &.tab-line-top {
+                            .highlight {
+                                bottom: auto;
+                                top: 0;
+                            }
+                        }
+                        
+                        .highlight {
+                            @include pos-offset($left:.4rem, $bottom:.4rem, $z-index:0);
+                            width:6.4rem; height:calc(100% - .8rem);
+                            background-color:$color-bg-primary;
+                            @extend %radius-12; @extend %shadow-sm;
+                            @include transition(.15s, all, cubic-bezier(0.0, 0.0, 0.58, 1.0));
+                        }
+                    }
+                }
+			}
+		}
+	
+		&:not(.tab-scroll, .tab-sticky) {
+			.tab-contents {
+				display:none;
+
+				&#{$isActive} {
+					display:block;
+				}
+			}
+		}
+	}
+}
+
+@keyframes widthAct {
+	0% {
+		width:0;
+		left: 50%;
+	}
+	100% {
+		width:100%;
+		left: 0;
+	}
+}
+
+// 안드로이드 old 버전
+.aos_old .tab-sticky .tab-list-wrap {@include pos-offset(relative);}

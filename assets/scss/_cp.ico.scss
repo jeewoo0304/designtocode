@@ -1,0 +1,278 @@
+//--- *!
+//  * Publishing UI Components
+//  * © 2025 BLUEWEBD™. All rights reserved.
+//  * Licensed under the MIT License.
+//  * Attribution to BLUEWEBD™ is required for all copies and derivative works.
+//  * https://opensource.org/licenses/MIT
+
+//-- ** ICON
+// SVG ICON
+$svgIcon-map: (
+    // 화살표
+    20_arrow_dn:"%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 7.5L10 12.5L4 7.5' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+    // color:212529
+    24_arrow_dn:"%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.1992 9L11.9992 15L4.79922 9' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+    // color:212529
+
+    // close
+    24_close:"%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 4.5L19.5 19.5M19.5 4.5L4.5 19.5' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // color:212529
+
+    // 사이즈별
+
+    20_add_file:"%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 16.2857V4.28571M16 10.2857H4' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // 8C959F
+
+    24_circle_x:"%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z' fill='{COLOR}'/%3E%3Cpath d='M8.5 8.5L15.5 15.5M15.5 8.5L8.5 15.5' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // 8C959F
+    24_add_field:"%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' fill='{COLOR}'/%3E%3Cpath d='M12 16.5V7.5M16.5 12H7.5' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // 212529
+    24_del_field:"%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='10' fill='{COLOR}'/%3E%3Cpath d='M7 12H17' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // A9B0B8
+
+    32_arrow_dn:"%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.1992 13L15.9992 19L8.79922 13' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+    // 212529
+    32_bell:"%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.9999 6.66667C17.9094 6.66667 19.7408 7.34095 21.0911 8.54118C22.4413 9.74142 23.1999 11.3693 23.1999 13.0667C23.1999 15.6921 23.7933 17.6581 24.5629 19.1039C25.5461 20.951 26.0377 21.8746 26.0104 22.0857C25.9785 22.3318 25.9379 22.3995 25.7355 22.5434C25.5621 22.6667 24.6992 22.6667 22.9735 22.6667H9.02625C7.30054 22.6667 6.43769 22.6667 6.26424 22.5434C6.06191 22.3995 6.02126 22.3318 5.98936 22.0857C5.96202 21.8746 6.45364 20.951 7.43687 19.1039C8.20643 17.6581 8.79988 15.6921 8.79988 13.0667C8.79988 11.3693 9.55845 9.74142 10.9087 8.54118C12.259 7.34095 14.0903 6.66667 15.9999 6.66667ZM15.9999 6.66667V4M12.4719 26.6667C13.4136 27.4978 14.6505 28.0021 16.0052 28.0021C17.36 28.0021 18.5969 27.4978 19.5386 26.6667' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+    // 212529
+    32_menu:"%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 23H25' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M7 16H25' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M7 9H25' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A",
+    // 212529
+
+    // etc
+    ic_check:"%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.375 5L5.125 8.75L12.625 1.25' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A",
+    20_notice_list:"%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1648_490)'%3E%3Cpath d='M18.3337 13.4722H15.5911C14.421 13.4722 13.4724 14.4208 13.4724 15.5908V18.3334M13.4724 18.3334H5.20329C4.26552 18.3334 3.36589 17.9608 2.70275 17.2977C2.03961 16.6345 1.66699 15.7349 1.66699 14.7971V5.20305C1.66699 4.26528 2.03961 3.36564 2.70275 2.70251C3.36589 2.03937 4.26552 1.66675 5.20329 1.66675H14.7971C15.7349 1.66675 16.6345 2.03937 17.2976 2.70251C17.9608 3.36564 18.3334 4.26528 18.3334 5.20305V13.4724C18.3334 14.3617 17.9801 15.2148 17.3514 15.8435L15.8434 17.3514C15.2147 17.9801 14.3617 18.3334 13.4724 18.3334ZM5.83359 14.1668H10.0002M5.83359 5.83335H14.1671M5.83359 9.99995H14.1671' stroke='{COLOR}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1648_490'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A", // 8C959F
+
+) !default;
+
+// 문자열 치환 (모든 $search → $replace 로 변경)
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+    @if $index == null {
+        @return $string;
+    }
+    $before: str-slice($string, 1, $index - 1);
+    $after: str-slice($string, $index + str-length($search));
+    @return $before + $replace + str-replace($after, $search, $replace);
+}
+
+// background-image URL 반환 함수
+@function svgIcoImage($iconName, $color: "666") {
+    @if not global-variable-exists(svgIcon-map) {
+        @warn "svgIcoImage(): $svgIcon-map is not defined.";
+        @return none;
+    }
+
+    $svgRaw: map-get($svgIcon-map, $iconName);
+
+    @if $svgRaw ==null {
+        @warn "svgIcoImage(): Icon `#{$iconName}` not found.";
+        @return none;
+    }
+
+    $encodedColor: "%23#{$color}";
+    $coloredSvg: str-replace($svgRaw, "{COLOR}", $encodedColor);
+    @return url("data:image/svg+xml;charset=utf8,#{$coloredSvg}");
+}
+
+// 믹스인: background-image 및 기본 background 속성 세팅
+@mixin svgIco($iconName,
+    $color: "666",
+    $backgroundPosition: center center,
+    $backgroundRepeat: no-repeat,
+    $backgroundSize: null) {
+    background-image: svgIcoImage($iconName, $color);
+    background-position: $backgroundPosition;
+    background-repeat: $backgroundRepeat;
+
+    @if $backgroundSize !=null {
+        background-size: $backgroundSize;
+    }
+}
+// before, after 과 @extend 정의 함께 적용
+@mixin icoMix($el-type, $extend-target, $display: block) {
+    @include el-content($el-type, $display) {
+    @extend #{unquote($extend-target)};
+        @content;  // 컨텐츠 블록 실행 허용
+    }
+}
+
+$ico: (
+    size:(
+        16:(width:1.6rem, height:1.6rem),
+        20:(width:2rem, height:2rem),
+        24:(width:2.4rem, height:2.4rem),
+        32:(width:3.2rem, height:3.2rem),
+    ),
+    20:(
+        arrow-dn:(
+            width:2rem, height:2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(20_arrow_dn, 212529),
+        ),
+        add-file:(
+            width:2rem, height:2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(20_add_file, 8C959F),
+        ),
+        notice_list :(
+            width:2rem, height:2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(20_notice_list, 8C959F),
+        ),
+    ),
+    24:(
+        arrow-dn:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_arrow_dn, 212529),
+        ),
+        circle-x:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_circle_x, 8C959F),
+        ),
+        add-field:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_add_field, 212529),
+        ),
+        del-field:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_del_field, A9B0B8),
+        ),
+        close:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_close, 212529),
+        ),
+        close-w:(
+            width:2.4rem, height:2.4rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(24_close, fff),
+        ),
+    ),
+    32:(
+        arrow-dn:(
+            width:3.2rem, height:3.2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(32_arrow_dn, 212529),
+        ),
+        bell:(
+            width:3.2rem, height:3.2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(32_bell, 212529),
+        ),
+        menu:(
+            width:3.2rem, height:3.2rem,
+            background:50% 50% no-repeat,
+            background-image: svgIcoImage(32_menu, 212529),
+        ),
+    ),
+    // etc
+    item-check: (
+        background:50% 50% no-repeat,
+        background-image: svgIcoImage(ic_check, 2380ff),
+    ),
+);
+
+// 사이즈
+%ico-size-20 {@include dndCP($ico, (size, 20));}
+%ico-size-24 {@include dndCP($ico, (size, 24));}
+%ico-size-32 {@include dndCP($ico, (size, 32));}
+
+// 화살표 20
+%ico-arrow-left-20 {@include dndCP($ico, (20, arrow-dn)); transform: rotate(-90deg);}
+// 화살표 24
+%ico-arrow-right-24 {@include dndCP($ico, (24, arrow-dn)); transform: rotate(90deg);}
+
+// 유틸 ICO
+%ico-add-file-20 {@include dndCP($ico, (20, add-file));}
+%ico-circle-x-24,
+%input-clear {@include dndCP($ico, (24, circle-x));}
+%ico-close-24 {@include dndCP($ico, (24, close));}
+%ico-add-field-24 {@include dndCP($ico, (24, add-field));}
+%ico-del-field-24 {@include dndCP($ico, (24, del-field));}
+%ico-his-prev {@include dndCP($ico, (24, arrow-dn)); transform: rotate(90deg);}
+%ico-check {@include dndCP($ico, item-check);}
+
+// 헤더버튼
+%ico-his-back {@include dndCP($ico, (32, arrow-dn)); transform: rotate(90deg);}
+%ico-bell-32 {@include dndCP($ico, (32, bell));}
+%ico-menu-32 {@include dndCP($ico, (32, menu));}
+
+
+$icos: '.icons';
+$icon: '.ico';
+
+#{$icon} {
+    display: inline-block;
+    vertical-align: middle;
+    &-20 {
+        @extend %ico-size-20;
+        &#{$icon} {
+            &-arrow {
+                &-left {@include icoMix(before, "%ico-arrow-left-20");}
+            }
+            &-add-file {@include icoMix(before, "%ico-add-file-20");}
+        }
+    }
+    &-24 {
+        @extend %ico-size-24;
+        &#{$icon} {
+            &-arrow {
+                &-right {@include icoMix(before, "%ico-arrow-right-24");}
+            }
+            &-add-field {@include icoMix(before, "%ico-add-field-24");}
+            &-del-field {@include icoMix(before, "%ico-del-field-24");}
+            &-clear {@include icoMix(before, "%ico-circle-x-24");}
+            &-close {@include icoMix(before, "%ico-close-24");}
+        }
+    }
+
+    &-32 {
+        @extend %ico-size-32;
+        &#{$icon} {
+            &-bell {@include icoMix(before, "%ico-bell-32");}
+            &-menu {@include icoMix(before, "%ico-menu-32");}
+        }
+    }
+
+    &.item {
+        &-check {
+            @include icoMix(before, "%ico-check") {width: 1.4rem; height: 1rem;}
+        }
+    }
+}
+
+#{$icon} {
+    display: inline-block;
+    word-break: keep-all;
+    & + #{$icon} {margin-left: 1rem;}
+
+    &.txt {
+        &-r {
+            &::before {
+                margin-right: .5rem;
+            }
+        }
+
+        &-l {
+            &::after {
+                margin-left: .5rem;
+            }
+        }
+    }
+
+    // 모달팝 아이콘
+    &-his-prev {
+        @include el-size(2.4rem, 2.4rem);
+        @extend %ico-his-prev;
+    }
+
+    &-pop {
+        &-close {
+            @include el-size(2.4rem, 2.4rem);
+            @extend %ico-close-24;
+        }
+    }
+}
